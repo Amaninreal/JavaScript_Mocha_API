@@ -1,0 +1,10 @@
+# node dependencies
+/node_modules/
+
+.vscode/
+
+.env
+
+/mochawesome-report/
+
+reports
