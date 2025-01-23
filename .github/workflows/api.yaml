@@ -3,11 +3,11 @@ name: Mocha API Test
 on:
   push:
     branches:
-      - master
+      - main
       - issue-*
   pull_request:
     branches:
-      - master
+      - main
       - issue-*
   schedule:
     - cron: '0 0 * * *'
