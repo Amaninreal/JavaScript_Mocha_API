@@ -138,7 +138,28 @@ Usage
 Framework Structure
 -------------------
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   .  ├── utils  │   └── apiClient.js          # API client configuration.  ├── testdata  │   └── booking.json          # Static test data (deprecated).  ├── tests  │   └── booking.test.js       # Test cases for CRUD operations.  ├── reports  │   └── mochawesome.html      # Generated test reports.  ├── Dockerfile                # Docker configuration file.  ├── .eslintrc.js              # ESLint configuration.  ├── .env                      # Environment variables.  ├── package.json              # Node.js dependencies and scripts.  └── README.md                 # Documentation.   `
+    ```
+    └── amaninreal-javascript_mocha_api/
+        ├── README.md
+        ├── Dockerfile
+        ├── eslint.config.mjs
+        ├── global.js
+        ├── package.json
+        ├── .env.template
+        ├── .eslintrc.json
+        ├── assets/
+        ├── test/
+        │   ├── deleteTest.spec.js
+        │   ├── getTest.spec.js
+        │   ├── patchTest.spec.js
+        │   ├── postTest.spec.js
+        │   ├── putTest.spec.js
+        │   └── restfulbookerTest.spec.js
+        ├── utils/
+        │   └── apiClient.js
+        └── .github/
+            └── workflows/
+                └── api.yaml
 
 CRUD Operations Covered
 -----------------------
