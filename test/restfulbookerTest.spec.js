@@ -1,17 +1,31 @@
-const { bookingClient } = require('../utils/apiClient');
+const { bookingClient, userAuthData } = require('../utils/apiClient');
 const expect = require('chai').expect;
-const booking = require('../testdata/booking.json');
-const userauthdata = require('../testdata/userauthdata.json');
-const updatedbooking = require('../testdata/updatedbooking.json');
+const { faker } = require('@faker-js/faker');
 
 describe('Booking Restful API Tests', () => {
     let bookingId;
     let token;
     
-    before(function(done) { 
+    const generateBookingData = () => ({
+        firstname: faker.person.firstName(),
+        lastname: faker.person.lastName(),
+        totalprice: faker.number.int({ min: 50, max: 1000 }),
+        depositpaid: faker.datatype.boolean(),
+        bookingdates: {
+            checkin: faker.date.future().toISOString().split('T')[0],
+            checkout: faker.date.future().toISOString().split('T')[0]
+        },
+        additionalneeds: faker.lorem.words(3)
+    });
+
+
+    let booking = generateBookingData();
+    let updatedbooking = generateBookingData();
+
+    before(function (done) {
         bookingClient
             .post('/auth')
-            .send(userauthdata)
+            .send(userAuthData)
             .set('Accept', 'application/json')
             .set('Content-Type', 'application/json')
             .end((err, res) => {
@@ -23,7 +37,7 @@ describe('Booking Restful API Tests', () => {
             });
     });
 
-    it('should successfully create a booking', function(done) {
+    it('should successfully create a booking', function (done) {
         bookingClient
             .post('/booking')
             .send(booking)
@@ -46,7 +60,7 @@ describe('Booking Restful API Tests', () => {
             });
     });
 
-    it('should fetch the booking of the provided booking id', function(done) {
+    it('should fetch the booking of the provided booking id', function (done) {
         bookingClient
             .get('/booking/' + bookingId)
             .set('Accept', 'application/json')
@@ -65,7 +79,7 @@ describe('Booking Restful API Tests', () => {
             });
     });
 
-    it('should update the booking of the provided booking id using Put request', function(done) {
+    it('should update the booking of the provided booking id using Put request', function (done) {
         bookingClient
             .put('/booking/' + bookingId)
             .send(updatedbooking)
@@ -86,13 +100,13 @@ describe('Booking Restful API Tests', () => {
             });
     });
 
-    it('should update the firstname and lastname of booking of the provided booking id', function(done) {
-        const firstname = 'Michael';
-        const lastname = 'Trenor';
+    it('should update the firstname and lastname of booking of the provided booking id', function (done) {
+        const firstname = faker.person.firstName();
+        const lastname = faker.person.lastName();
 
         bookingClient
             .patch('/booking/' + bookingId)
-            .send({ firstname: firstname, lastname: lastname })
+            .send({ firstname, lastname })
             .set('Accept', 'application/json')
             .set('Content-Type', 'application/json')
             .set('Cookie', 'token=' + token)
@@ -110,7 +124,7 @@ describe('Booking Restful API Tests', () => {
             });
     });
 
-    it('should Delete the booking of the provided booking id', function(done) {
+    it('should delete the booking of the provided booking id', function (done) {
         bookingClient
             .delete('/booking/' + bookingId)
             .set('Accept', 'application/json')
@@ -123,7 +137,7 @@ describe('Booking Restful API Tests', () => {
             });
     });
 
-    it('should show 404 status code for deleted booking id', function(done) {
+    it('should show 404 status code for deleted booking id', function (done) {
         bookingClient
             .get('/booking/' + bookingId)
             .set('Accept', 'application/json')
