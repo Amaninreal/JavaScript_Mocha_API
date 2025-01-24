@@ -52,7 +52,6 @@ The framework supports all CRUD operations:
     
     *   npm run lint
         
-        
 ### 5\. **Containerization**
 
 *   **Tool Used**: Docker
