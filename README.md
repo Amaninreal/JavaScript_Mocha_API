@@ -50,7 +50,7 @@ The framework supports all CRUD operations:
     
 *   Commands:
     
-    *   npm run lint
+        npm run lint
         
 ### 5\. **Containerization**
 
