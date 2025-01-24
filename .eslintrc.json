@@ -1,0 +1,15 @@
+{
+  "env": {
+    "node": true,
+    "mocha": true,
+    "es2021": true
+  },
+  "globals": {
+    "describe": "readonly",
+    "it": "readonly",
+    "require": "readonly"
+  },
+  "rules": {
+    "no-undef": "off"
+  }
+}
