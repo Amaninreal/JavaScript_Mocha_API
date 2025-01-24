@@ -34,6 +34,8 @@ jobs:
         echo "BASE_URL=${{ secrets.BASE_URL }}" >> $GITHUB_ENV
         echo "PARAM_URL=${{ secrets.PARAM_URL }}" >> $GITHUB_ENV
         echo "BOOKING_URL=${{ secrets.BOOKING_URL }}" >> $GITHUB_ENV
+        echo "USER_NAME=${{ secrets.USER_NAME }}" >> $GITHUB_ENV
+        echo "PASSWORD=${{ secrets.PASSWORD }}" >> $GITHUB_ENV
     
     - name: Install Dependencies
       run: npm ci
