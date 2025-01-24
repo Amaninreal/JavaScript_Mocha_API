@@ -100,19 +100,16 @@ Usage
 
 ### Running Tests
 
-    ```
     npm test
     
 
 ### Generate Reports
 
-    ```
     npm test
     
 
 ### Lint Code
 
-    ```
     npm run lint
     
     npm run build
@@ -120,9 +117,9 @@ Usage
 
 ### Docker
 
-*   docker build -t mocha_api_framework .
+    docker build -t mocha_api_framework .
     
-*   docker run -d mocha_api_framework
+    docker run -d mocha_api_framework
     
 
 ### CI/CD Pipeline
