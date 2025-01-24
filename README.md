@@ -138,7 +138,6 @@ Usage
 Framework Structure
 -------------------
 
-    ```
     └── amaninreal-javascript_mocha_api/
         ├── README.md
         ├── Dockerfile
