@@ -100,26 +100,29 @@ Usage
 
 ### Running Tests
 
-*   npm test
+    ```
+    npm test
     
 
 ### Generate Reports
 
-*   npm test
+    ```
+    npm test
     
 
 ### Lint Code
 
-*   npm run lint
+    ```
+    npm run lint
     
-*   npm run build
+    npm run build
     
 
 ### Docker
 
-*   docker build -t api-framework .
+*   docker build -t mocha_api_framework .
     
-*   docker run -d api-framework
+*   docker run -d mocha_api_framework
     
 
 ### CI/CD Pipeline
