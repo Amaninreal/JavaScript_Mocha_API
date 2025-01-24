@@ -38,6 +38,8 @@ The framework supports all CRUD operations:
 *   Generates detailed and visually appealing test execution reports.
     
 *   Reports include test summaries, errors, and execution time.
+
+![alt text](image.png)
     
 
 ### 4\. **Linting**
@@ -48,9 +50,8 @@ The framework supports all CRUD operations:
     
 *   Commands:
     
-    *   npm run lint - Runs the linter to check for issues.
+    *   npm run lint
         
-    *   npm run build - Fixes linting issues (if applicable).
         
 
 ### 5\. **Containerization**
