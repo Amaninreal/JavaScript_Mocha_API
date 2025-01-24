@@ -39,8 +39,8 @@ The framework supports all CRUD operations:
     
 *   Reports include test summaries, errors, and execution time.
 
-![alt text](image.png)
-    
+![image](https://github.com/user-attachments/assets/50807cf8-b688-42ef-87d5-f8aca138d758)
+
 
 ### 4\. **Linting**
 
